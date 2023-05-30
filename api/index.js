@@ -12,6 +12,24 @@ const { MongoClient, ObjectId } = require("mongodb");
 const mongo = new MongoClient("mongodb://localhost");
 const db = mongo.db("student-list");
 
+//search 
+app.get("/students/search", async (req, res) => {
+    const { q } = req.query;
+  
+    const students = await db.collection("students")
+      .find({ $or: [
+        { name: { $regex: q, $options: "i" } },
+        { gender: { $regex: q, $options: "i" } },
+        { hobby: { $regex: q, $options: "i" } },
+        { state: { $regex: q, $options: "i" } },
+      ]})
+      .toArray();
+
+    if(students.length > 0) return res.json(students);
+      
+    res.json({ msg: "student is not found"})
+  });
+
 //filling in a student information
 app.post("/students", async (req, res) => {
     const { name, email, phone, nrc, gender, address, hobby, state, township } = req.body;
