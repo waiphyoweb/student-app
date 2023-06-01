@@ -121,26 +121,6 @@ export default function NewStudent({ add }) {
                             subTwoOfFourthYr,
                             subThreeOfFourthYr,
                         );
-
-                        nameInput.current.value = "";
-                        emailInput.current.value = "";
-                        phoneInput.current.value = "";
-                        nrcInput.current.value = "";
-                        addressInput.current.value = "";
-                        hobbyInput.current.value = "";
-                        townshipInput.current.value = "";
-                        subOneOfFirstYrInput.current.value = "";
-                        subTwoOfFirstYrInput.current.value = "";
-                        subThreeOfFirstYrInput.current.value = "";
-                        subOneOfSecondYrInput.current.value = "";
-                        subTwoOfSecondYrInput.current.value = "";
-                        subThreeOfSecondYrInput.current.value = "";
-                        subOneOfThirdYrInput.current.value = "";
-                        subTwoOfThirdYrInput.current.value = "";
-                        subThreeOfThirdYrInput.current.value = "";
-                        subOneOfFourthYrInput.current.value = "";
-                        subTwoOfFourthYrInput.current.value = "";
-                        subThreeOfFourthYrInput.current.value = "";
                     } else if (thirdYr) {
                         const name = nameInput.current.value;
                         const email = emailInput.current.value;
@@ -179,23 +159,6 @@ export default function NewStudent({ add }) {
                             subTwoOfThirdYr,
                             subThreeOfThirdYr,
                         );
-
-                        nameInput.current.value = "";
-                        emailInput.current.value = "";
-                        phoneInput.current.value = "";
-                        nrcInput.current.value = "";
-                        addressInput.current.value = "";
-                        hobbyInput.current.value = "";
-                        townshipInput.current.value = "";
-                        subOneOfFirstYrInput.current.value = "";
-                        subTwoOfFirstYrInput.current.value = "";
-                        subThreeOfFirstYrInput.current.value = "";
-                        subOneOfSecondYrInput.current.value = "";
-                        subTwoOfSecondYrInput.current.value = "";
-                        subThreeOfSecondYrInput.current.value = "";
-                        subOneOfThirdYrInput.current.value = "";
-                        subTwoOfThirdYrInput.current.value = "";
-                        subThreeOfThirdYrInput.current.value = "";
                     } else if (secondYr) {
                         const name = nameInput.current.value;
                         const email = emailInput.current.value;
@@ -228,20 +191,6 @@ export default function NewStudent({ add }) {
                             subTwoOfSecondYr,
                             subThreeOfSecondYr,
                         );
-
-                        nameInput.current.value = "";
-                        emailInput.current.value = "";
-                        phoneInput.current.value = "";
-                        nrcInput.current.value = "";
-                        addressInput.current.value = "";
-                        hobbyInput.current.value = "";
-                        townshipInput.current.value = "";
-                        subOneOfFirstYrInput.current.value = "";
-                        subTwoOfFirstYrInput.current.value = "";
-                        subThreeOfFirstYrInput.current.value = "";
-                        subOneOfSecondYrInput.current.value = "";
-                        subTwoOfSecondYrInput.current.value = "";
-                        subThreeOfSecondYrInput.current.value = "";
                     } else {
                         const name = nameInput.current.value;
                         const email = emailInput.current.value;
@@ -268,18 +217,19 @@ export default function NewStudent({ add }) {
                             subTwoOfFirstYr,
                             subThreeOfFirstYr,
                         );
-
-                        nameInput.current.value = "";
-                        emailInput.current.value = "";
-                        phoneInput.current.value = "";
-                        nrcInput.current.value = "";
-                        addressInput.current.value = "";
-                        hobbyInput.current.value = "";
-                        townshipInput.current.value = "";
-                        subOneOfFirstYrInput.current.value = "";
-                        subTwoOfFirstYrInput.current.value = "";
-                        subThreeOfFirstYrInput.current.value = "";
                     }
+
+                    nameInput.current.value = "";
+                    emailInput.current.value = "";
+                    phoneInput.current.value = "";
+                    nrcInput.current.value = "";
+                    addressInput.current.value = "";
+                    hobbyInput.current.value = "";
+                    townshipInput.current.value = "";
+                    setFirstYr(false);
+                    setSecondYr(false);
+                    setThirdYr(false);
+                    setFourthYr(false);
                     
                     nameInput.current.focus();
                 }}

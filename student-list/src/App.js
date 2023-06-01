@@ -147,12 +147,14 @@ export default function App() {
         setSutdents(result);
     };
 
-    // const search = (name) => {
-    //     (async (q) => {
-    //         const result = await fetch(`${api}/students/search?q=${q}`);
+    const search = (q) => {
+        (async () => {
+            const res = await fetch(`${api}/students/search?q=${q}`);
+            const result = await res.json();
 
-    //     })();
-    // }
+            setSutdents(result);
+        })();
+    }
 
     return (
         <Box>
@@ -174,7 +176,7 @@ export default function App() {
                             Student List
                         </Typography>
                         <Stack direction="row" spacing={2}>
-                            <SearchBox />
+                            <SearchBox search={search} />
                             <IconButton>
                                 <Link to={"/form"}>
                                     <PersonAdd

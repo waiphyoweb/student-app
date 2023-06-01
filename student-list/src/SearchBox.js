@@ -1,8 +1,9 @@
 import { Search } from "@mui/icons-material";
 import { Box, IconButton, InputAdornment, OutlinedInput } from "@mui/material";
+import { lightBlue } from "@mui/material/colors";
 import { useState } from "react";
 
-export default function SearchBox() {
+export default function SearchBox({ search }) {
     const [query, setQuery] = useState("");
 
     return (
@@ -13,12 +14,13 @@ export default function SearchBox() {
             onSubmit={(e) => {
                 e.preventDefault();
 
-                console.log(query);
+                search(query);
             }}
         >
             <OutlinedInput
                 placeholder="Search"
                 fullWidth
+                sx={{ bgcolor: lightBlue[50] }}
                 onChange={(e) => {
                     setQuery(e.target.value);
                 }}
