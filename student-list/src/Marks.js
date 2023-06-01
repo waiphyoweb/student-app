@@ -1,30 +1,33 @@
-import { Add } from "@mui/icons-material";
-import { Box, IconButton, Stack, TextField } from "@mui/material";
+import { Box, Stack, TextField } from "@mui/material";
+import { forwardRef } from "react";
 
-export default function Marks({ addMarkComponent }) {
+const Marks = forwardRef(({ subOne, subTwo, subThree }) => {
     return (
-        <Box>
+        <Box sx={{ mx: "auto", flexGrow: 1 }}>
             <Stack direction="row" spacing={3}>
-                <IconButton onClick={() => addMarkComponent}>
-                    <Add />
-                </IconButton>
+                {/* <TextField
+                    fullWidth
+                    inputRef={academicYear}
+                    label="Academic Year ( **** - **** )"
+                /> */}
                 <TextField
-                    required
-                    label="Year"
-                />
-                <TextField
-                    required
+                    fullWidth
+                    inputRef={subOne}
                     label="Subject 1"
                 />
                 <TextField
-                    required
+                    fullWidth
+                    inputRef={subTwo}
                     label="Subject 2"
                 />
                 <TextField
-                    required
+                    fullWidth
+                    inputRef={subThree}
                     label="Subject 3"
                 />
             </Stack>
         </Box>
     );
-}
+});
+
+export default Marks;

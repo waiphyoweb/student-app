@@ -7,7 +7,15 @@ import {
     Typography,
     Paper,
     Button,
+    TableContainer,
+    Table,
+    TableHead,
+    TableBody,
+    TableRow,
+    TableCell,
+    tableCellClasses,
 } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import {
     Person,
     ArrowBack,
@@ -40,6 +48,26 @@ export default function StudentDetail({ remove }) {
             setStudent(student);
         })();
     }, [id]);
+
+    const StyledTableCell = styled(TableCell)(({ theme }) => ({
+        [`&.${tableCellClasses.head}`]: {
+            backgroundColor: lightBlue[600],
+            color: theme.palette.common.white,
+        },
+        [`&.${tableCellClasses.body}`]: {
+            fontSize: 15,
+        },
+    }));
+    
+    const StyledTableRow = styled(TableRow)(({ theme }) => ({
+        "&:nth-of-type(odd)": {
+            backgroundColor: theme.palette.action.hover,
+        },
+        // hide last border
+        "&:last-child td, &:last-child th": {
+            border: 0,
+        },
+    }));
 
     return (
         <Box sx={{ mx: { lg: "400px", md: "200px", sm: "100px" } }}>
@@ -139,6 +167,114 @@ export default function StudentDetail({ remove }) {
                     </ListItem>
                 </List>
             </Paper>
+            <Box sx={{ my: 3 }}>
+                <TableContainer component={Paper}>
+                    <Table>
+                        <TableHead>
+                            <StyledTableRow>
+                                <StyledTableCell>Year</StyledTableCell>
+                                <StyledTableCell align="right">
+                                    Subject One
+                                </StyledTableCell>
+                                <StyledTableCell align="right">
+                                    Subject Two
+                                </StyledTableCell>
+                                <StyledTableCell align="right">
+                                    Subject Three
+                                </StyledTableCell>
+                            </StyledTableRow>
+                        </TableHead>
+                        <TableBody>
+                            <StyledTableRow
+                                sx={{
+                                    "&:last-child td, &:last-child th": {
+                                        border: 0,
+                                    },
+                                }}
+                            >
+                                <StyledTableCell component="th" scope="row">
+                                    
+                                </StyledTableCell>
+                                <StyledTableCell align="right">
+                                    {student.subOneOfFirstYr}
+                                </StyledTableCell>
+                                <StyledTableCell align="right">
+                                    {student.subTwoOfFirstYr}
+                                </StyledTableCell>
+                                <StyledTableCell align="right">
+                                    {student.subThreeOfFirstYr}
+                                </StyledTableCell>
+                            </StyledTableRow>
+                            { student.subOneOfSecondYr && 
+                                <StyledTableRow
+                                    sx={{
+                                        "&:last-child td, &:last-child th": {
+                                            border: 0,
+                                        },
+                                    }}
+                                >
+                                    <StyledTableCell component="th" scope="row">
+                                        
+                                    </StyledTableCell>
+                                    <StyledTableCell align="right">
+                                        {student.subTwoOfSecondYr}
+                                    </StyledTableCell>
+                                    <StyledTableCell align="right">
+                                        {student.subTwoOfSecondYr}
+                                    </StyledTableCell>
+                                    <StyledTableCell align="right">
+                                        {student.subThreeOfSecondYr}
+                                    </StyledTableCell>
+                                </StyledTableRow>
+                            }
+                            { student.subOneOfThirdYr && 
+                                <StyledTableRow
+                                    sx={{
+                                        "&:last-child td, &:last-child th": {
+                                            border: 0,
+                                        },
+                                    }}
+                                >
+                                    <StyledTableCell component="th" scope="row">
+                                        
+                                    </StyledTableCell>
+                                    <StyledTableCell align="right">
+                                        {student.subOneOfThirdYr}
+                                    </StyledTableCell>
+                                    <StyledTableCell align="right">
+                                        {student.subTwoOfThirdYr}
+                                    </StyledTableCell>
+                                    <StyledTableCell align="right">
+                                        {student.subThreeOfThirdYr}
+                                    </StyledTableCell>
+                                </StyledTableRow>
+                            }
+                            { student.subOneOfFourthYr &&
+                                <StyledTableRow
+                                    sx={{
+                                        "&:last-child td, &:last-child th": {
+                                            border: 0,
+                                        },
+                                    }}
+                                >
+                                    <StyledTableCell component="th" scope="row">
+                                        
+                                    </StyledTableCell>
+                                    <StyledTableCell align="right">
+                                        {student.subOneOfFourthYr}
+                                    </StyledTableCell>
+                                    <StyledTableCell align="right">
+                                        {student.subTwoOfFourthYr}
+                                    </StyledTableCell>
+                                    <StyledTableCell align="right">
+                                        {student.subThreeOfFourthYr}
+                                    </StyledTableCell>
+                                </StyledTableRow>
+                            }
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+            </Box>
         </Box>
     );
 }

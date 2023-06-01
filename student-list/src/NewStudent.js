@@ -11,14 +11,20 @@ import {
     MenuItem,
     Select,
     IconButton,
-    TextField
+    TextField,
+    Divider
 } from "@mui/material";
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Marks from "./Marks";
-import { ArrowBack } from "@mui/icons-material";
+import { ArrowBack, Add } from "@mui/icons-material";
 
 export default function NewStudent({ add }) {
+    const [ firstYr, setFirstYr ] = useState(false);
+    const [ secondYr, setSecondYr ] = useState(false);
+    const [ thirdYr, setThirdYr ] = useState(false);
+    const [ fourthYr, setFourthYr ] = useState(false);
+
     const navigate = useNavigate();
 
     const nameInput = useRef();
@@ -28,6 +34,22 @@ export default function NewStudent({ add }) {
     const addressInput = useRef();
     const hobbyInput = useRef();
     const townshipInput = useRef();
+
+    const subOneOfFirstYrInput = useRef();
+    const subTwoOfFirstYrInput = useRef();
+    const subThreeOfFirstYrInput = useRef();
+
+    const subOneOfSecondYrInput = useRef();
+    const subTwoOfSecondYrInput = useRef();
+    const subThreeOfSecondYrInput = useRef();
+
+    const subOneOfThirdYrInput = useRef();
+    const subTwoOfThirdYrInput = useRef();
+    const subThreeOfThirdYrInput = useRef();
+
+    const subOneOfFourthYrInput = useRef();
+    const subTwoOfFourthYrInput = useRef();
+    const subThreeOfFourthYrInput = useRef();
 
     const [gender, setGender] = useState("Female");
 
@@ -42,7 +64,7 @@ export default function NewStudent({ add }) {
     };
 
     return (
-        <Box sx={{ mx: { lg: "400px", md: "200px", sm: "100px" }, mt: 3 }}>
+        <Box sx={{ mx: { lg: "400px", md: "200px", sm: "100px" }, my: 3 }}>
             <Box sx={{ my: 3 }}>
                 <IconButton onClick={() => navigate('/')}>
                     <ArrowBack />
@@ -55,34 +77,210 @@ export default function NewStudent({ add }) {
                 onSubmit={(e) => {
                     e.preventDefault();
 
-                    const name = nameInput.current.value;
-                    const email = emailInput.current.value;
-                    const phone = phoneInput.current.value;
-                    const nrc = nrcInput.current.value;
-                    const address = addressInput.current.value;
-                    const hobby = hobbyInput.current.value;
-                    const township = townshipInput.current.value;
+                    if (fourthYr) {
+                        const name = nameInput.current.value;
+                        const email = emailInput.current.value;
+                        const phone = phoneInput.current.value;
+                        const nrc = nrcInput.current.value;
+                        const address = addressInput.current.value;
+                        const hobby = hobbyInput.current.value;
+                        const township = townshipInput.current.value;
+                        const subOneOfFirstYr = subOneOfFirstYrInput.current.value;
+                        const subTwoOfFirstYr = subTwoOfFirstYrInput.current.value;
+                        const subThreeOfFirstYr = subThreeOfFirstYrInput.current.value;
+                        const subOneOfSecondYr = subOneOfSecondYrInput.current.value;
+                        const subTwoOfSecondYr = subTwoOfSecondYrInput.current.value;
+                        const subThreeOfSecondYr = subThreeOfSecondYrInput.current.value;
+                        const subOneOfThirdYr = subOneOfThirdYrInput.current.value;
+                        const subTwoOfThirdYr = subTwoOfThirdYrInput.current.value;
+                        const subThreeOfThirdYr = subThreeOfThirdYrInput.current.value;
+                        const subOneOfFourthYr = subOneOfFourthYrInput.current.value;
+                        const subTwoOfFourthYr = subTwoOfFourthYrInput.current.value;
+                        const subThreeOfFourthYr = subThreeOfFourthYrInput.current.value;
 
-                    add(
-                        name,
-                        email,
-                        phone,
-                        nrc,
-                        gender,
-                        address,
-                        hobby,
-                        state,
-                        township
-                    );
+                        add(
+                            name,
+                            email,
+                            phone,
+                            nrc,
+                            gender,
+                            address,
+                            hobby,
+                            state,
+                            township,
+                            subOneOfFirstYr,
+                            subTwoOfFirstYr,
+                            subThreeOfFirstYr,
+                            subOneOfSecondYr,
+                            subTwoOfSecondYr,
+                            subThreeOfSecondYr,
+                            subOneOfThirdYr,
+                            subTwoOfThirdYr,
+                            subThreeOfThirdYr,
+                            subOneOfFourthYr,
+                            subTwoOfFourthYr,
+                            subThreeOfFourthYr,
+                        );
 
-                    nameInput.current.value = "";
-                    emailInput.current.value = "";
-                    phoneInput.current.value = "";
-                    nrcInput.current.value = "";
-                    addressInput.current.value = "";
-                    hobbyInput.current.value = "";
-                    townshipInput.current.value = "";
+                        nameInput.current.value = "";
+                        emailInput.current.value = "";
+                        phoneInput.current.value = "";
+                        nrcInput.current.value = "";
+                        addressInput.current.value = "";
+                        hobbyInput.current.value = "";
+                        townshipInput.current.value = "";
+                        subOneOfFirstYrInput.current.value = "";
+                        subTwoOfFirstYrInput.current.value = "";
+                        subThreeOfFirstYrInput.current.value = "";
+                        subOneOfSecondYrInput.current.value = "";
+                        subTwoOfSecondYrInput.current.value = "";
+                        subThreeOfSecondYrInput.current.value = "";
+                        subOneOfThirdYrInput.current.value = "";
+                        subTwoOfThirdYrInput.current.value = "";
+                        subThreeOfThirdYrInput.current.value = "";
+                        subOneOfFourthYrInput.current.value = "";
+                        subTwoOfFourthYrInput.current.value = "";
+                        subThreeOfFourthYrInput.current.value = "";
+                    } else if (thirdYr) {
+                        const name = nameInput.current.value;
+                        const email = emailInput.current.value;
+                        const phone = phoneInput.current.value;
+                        const nrc = nrcInput.current.value;
+                        const address = addressInput.current.value;
+                        const hobby = hobbyInput.current.value;
+                        const township = townshipInput.current.value;
+                        const subOneOfFirstYr = subOneOfFirstYrInput.current.value;
+                        const subTwoOfFirstYr = subTwoOfFirstYrInput.current.value;
+                        const subThreeOfFirstYr = subThreeOfFirstYrInput.current.value;
+                        const subOneOfSecondYr = subOneOfSecondYrInput.current.value;
+                        const subTwoOfSecondYr = subTwoOfSecondYrInput.current.value;
+                        const subThreeOfSecondYr = subThreeOfSecondYrInput.current.value;
+                        const subOneOfThirdYr = subOneOfThirdYrInput.current.value;
+                        const subTwoOfThirdYr = subTwoOfThirdYrInput.current.value;
+                        const subThreeOfThirdYr = subThreeOfThirdYrInput.current.value;
 
+                        add(
+                            name,
+                            email,
+                            phone,
+                            nrc,
+                            gender,
+                            address,
+                            hobby,
+                            state,
+                            township,
+                            subOneOfFirstYr,
+                            subTwoOfFirstYr,
+                            subThreeOfFirstYr,
+                            subOneOfSecondYr,
+                            subTwoOfSecondYr,
+                            subThreeOfSecondYr,
+                            subOneOfThirdYr,
+                            subTwoOfThirdYr,
+                            subThreeOfThirdYr,
+                        );
+
+                        nameInput.current.value = "";
+                        emailInput.current.value = "";
+                        phoneInput.current.value = "";
+                        nrcInput.current.value = "";
+                        addressInput.current.value = "";
+                        hobbyInput.current.value = "";
+                        townshipInput.current.value = "";
+                        subOneOfFirstYrInput.current.value = "";
+                        subTwoOfFirstYrInput.current.value = "";
+                        subThreeOfFirstYrInput.current.value = "";
+                        subOneOfSecondYrInput.current.value = "";
+                        subTwoOfSecondYrInput.current.value = "";
+                        subThreeOfSecondYrInput.current.value = "";
+                        subOneOfThirdYrInput.current.value = "";
+                        subTwoOfThirdYrInput.current.value = "";
+                        subThreeOfThirdYrInput.current.value = "";
+                    } else if (secondYr) {
+                        const name = nameInput.current.value;
+                        const email = emailInput.current.value;
+                        const phone = phoneInput.current.value;
+                        const nrc = nrcInput.current.value;
+                        const address = addressInput.current.value;
+                        const hobby = hobbyInput.current.value;
+                        const township = townshipInput.current.value;
+                        const subOneOfFirstYr = subOneOfFirstYrInput.current.value;
+                        const subTwoOfFirstYr = subTwoOfFirstYrInput.current.value;
+                        const subThreeOfFirstYr = subThreeOfFirstYrInput.current.value;
+                        const subOneOfSecondYr = subOneOfSecondYrInput.current.value;
+                        const subTwoOfSecondYr = subTwoOfSecondYrInput.current.value;
+                        const subThreeOfSecondYr = subThreeOfSecondYrInput.current.value;
+
+                        add(
+                            name,
+                            email,
+                            phone,
+                            nrc,
+                            gender,
+                            address,
+                            hobby,
+                            state,
+                            township,
+                            subOneOfFirstYr,
+                            subTwoOfFirstYr,
+                            subThreeOfFirstYr,
+                            subOneOfSecondYr,
+                            subTwoOfSecondYr,
+                            subThreeOfSecondYr,
+                        );
+
+                        nameInput.current.value = "";
+                        emailInput.current.value = "";
+                        phoneInput.current.value = "";
+                        nrcInput.current.value = "";
+                        addressInput.current.value = "";
+                        hobbyInput.current.value = "";
+                        townshipInput.current.value = "";
+                        subOneOfFirstYrInput.current.value = "";
+                        subTwoOfFirstYrInput.current.value = "";
+                        subThreeOfFirstYrInput.current.value = "";
+                        subOneOfSecondYrInput.current.value = "";
+                        subTwoOfSecondYrInput.current.value = "";
+                        subThreeOfSecondYrInput.current.value = "";
+                    } else {
+                        const name = nameInput.current.value;
+                        const email = emailInput.current.value;
+                        const phone = phoneInput.current.value;
+                        const nrc = nrcInput.current.value;
+                        const address = addressInput.current.value;
+                        const hobby = hobbyInput.current.value;
+                        const township = townshipInput.current.value;
+                        const subOneOfFirstYr = subOneOfFirstYrInput.current.value;
+                        const subTwoOfFirstYr = subTwoOfFirstYrInput.current.value;
+                        const subThreeOfFirstYr = subThreeOfFirstYrInput.current.value;
+
+                        add(
+                            name,
+                            email,
+                            phone,
+                            nrc,
+                            gender,
+                            address,
+                            hobby,
+                            state,
+                            township,
+                            subOneOfFirstYr,
+                            subTwoOfFirstYr,
+                            subThreeOfFirstYr,
+                        );
+
+                        nameInput.current.value = "";
+                        emailInput.current.value = "";
+                        phoneInput.current.value = "";
+                        nrcInput.current.value = "";
+                        addressInput.current.value = "";
+                        hobbyInput.current.value = "";
+                        townshipInput.current.value = "";
+                        subOneOfFirstYrInput.current.value = "";
+                        subTwoOfFirstYrInput.current.value = "";
+                        subThreeOfFirstYrInput.current.value = "";
+                    }
+                    
                     nameInput.current.focus();
                 }}
             >
@@ -163,11 +361,31 @@ export default function NewStudent({ add }) {
                         fullWidth
                         inputRef={townshipInput}
                     />
-                    <Marks />
+                    <Divider />
+                    <Stack direction="row" spacing={3}>
+                        <IconButton onClick={() => {
+                            setFirstYr(true);
+                        }}>
+                            <Add />
+                        </IconButton>
+                        { firstYr && <Marks ref={subOneOfFirstYrInput} subOne={subOneOfFirstYrInput} subTwo={subTwoOfFirstYrInput} subThree={subThreeOfFirstYrInput} />}
+                    </Stack>
+                    <Stack direction="row" spacing={3}>
+                        { firstYr && <IconButton onClick={() => setSecondYr(true)}><Add /></IconButton>}
+                        { secondYr && <Marks ref={subOneOfSecondYrInput} subOne={subOneOfSecondYrInput} subTwo={subTwoOfSecondYrInput} subThree={subThreeOfSecondYrInput} />}
+                    </Stack>
+                    <Stack direction="row" spacing={3}>
+                        { secondYr && <IconButton onClick={() => setThirdYr(true)}><Add /></IconButton>}
+                        { thirdYr && <Marks ref={subOneOfThirdYrInput} subOne={subOneOfThirdYrInput} subTwo={subTwoOfThirdYrInput} subThree={subThreeOfThirdYrInput} />}
+                    </Stack>
+                    <Stack direction="row" spacing={3}>
+                        { thirdYr && <IconButton onClick={() => setFourthYr(true)}><Add /></IconButton>}
+                        { fourthYr && <Marks ref={subOneOfFourthYrInput} subOne={subOneOfFourthYrInput} subTwo={subTwoOfFourthYrInput} subThree={subThreeOfFourthYrInput} />}
+                    </Stack>
                     <Button
                         type="submit"
                         variant="contained"
-                        sx={{ width: "30px" }}
+                        sx={{ width: "100px" }}
                     >
                         Save
                     </Button>
