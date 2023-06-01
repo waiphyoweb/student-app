@@ -1,15 +1,15 @@
 import { Box, Stack, TextField } from "@mui/material";
 import { forwardRef } from "react";
 
-const Marks = forwardRef(({ subOne, subTwo, subThree }) => {
+const Marks = forwardRef(({ year, subOne, subTwo, subThree }) => {
     return (
         <Box sx={{ mx: "auto", flexGrow: 1 }}>
             <Stack direction="row" spacing={3}>
-                {/* <TextField
+                <TextField
                     fullWidth
-                    inputRef={academicYear}
+                    inputRef={year}
                     label="Academic Year ( **** - **** )"
-                /> */}
+                />
                 <TextField
                     fullWidth
                     inputRef={subOne}

@@ -193,7 +193,7 @@ export default function StudentDetail({ remove }) {
                                 }}
                             >
                                 <StyledTableCell component="th" scope="row">
-                                    
+                                    {student.firstYr}
                                 </StyledTableCell>
                                 <StyledTableCell align="right">
                                     {student.subOneOfFirstYr}
@@ -205,7 +205,7 @@ export default function StudentDetail({ remove }) {
                                     {student.subThreeOfFirstYr}
                                 </StyledTableCell>
                             </StyledTableRow>
-                            { student.subOneOfSecondYr && 
+                            { student.secondYr && 
                                 <StyledTableRow
                                     sx={{
                                         "&:last-child td, &:last-child th": {
@@ -214,7 +214,7 @@ export default function StudentDetail({ remove }) {
                                     }}
                                 >
                                     <StyledTableCell component="th" scope="row">
-                                        
+                                        {student.secondYr}
                                     </StyledTableCell>
                                     <StyledTableCell align="right">
                                         {student.subTwoOfSecondYr}
@@ -227,7 +227,7 @@ export default function StudentDetail({ remove }) {
                                     </StyledTableCell>
                                 </StyledTableRow>
                             }
-                            { student.subOneOfThirdYr && 
+                            { student.thirdYr && 
                                 <StyledTableRow
                                     sx={{
                                         "&:last-child td, &:last-child th": {
@@ -236,7 +236,7 @@ export default function StudentDetail({ remove }) {
                                     }}
                                 >
                                     <StyledTableCell component="th" scope="row">
-                                        
+                                        {student.thirdYr}
                                     </StyledTableCell>
                                     <StyledTableCell align="right">
                                         {student.subOneOfThirdYr}
@@ -249,7 +249,7 @@ export default function StudentDetail({ remove }) {
                                     </StyledTableCell>
                                 </StyledTableRow>
                             }
-                            { student.subOneOfFourthYr &&
+                            { student.fourthYr &&
                                 <StyledTableRow
                                     sx={{
                                         "&:last-child td, &:last-child th": {
@@ -258,7 +258,7 @@ export default function StudentDetail({ remove }) {
                                     }}
                                 >
                                     <StyledTableCell component="th" scope="row">
-                                        
+                                        {student.fourthYr}
                                     </StyledTableCell>
                                     <StyledTableCell align="right">
                                         {student.subOneOfFourthYr}

@@ -35,6 +35,11 @@ export default function NewStudent({ add }) {
     const hobbyInput = useRef();
     const townshipInput = useRef();
 
+    const firstYrInput = useRef();
+    const secondYrInput = useRef();
+    const thirdYrInput = useRef();
+    const fourthYrInput = useRef();
+
     const subOneOfFirstYrInput = useRef();
     const subTwoOfFirstYrInput = useRef();
     const subThreeOfFirstYrInput = useRef();
@@ -85,15 +90,19 @@ export default function NewStudent({ add }) {
                         const address = addressInput.current.value;
                         const hobby = hobbyInput.current.value;
                         const township = townshipInput.current.value;
+                        const firstYr = firstYrInput.current.value;
                         const subOneOfFirstYr = subOneOfFirstYrInput.current.value;
                         const subTwoOfFirstYr = subTwoOfFirstYrInput.current.value;
                         const subThreeOfFirstYr = subThreeOfFirstYrInput.current.value;
+                        const secondYr = secondYrInput.current.value;
                         const subOneOfSecondYr = subOneOfSecondYrInput.current.value;
                         const subTwoOfSecondYr = subTwoOfSecondYrInput.current.value;
                         const subThreeOfSecondYr = subThreeOfSecondYrInput.current.value;
+                        const thirdYr = thirdYrInput.current.value;
                         const subOneOfThirdYr = subOneOfThirdYrInput.current.value;
                         const subTwoOfThirdYr = subTwoOfThirdYrInput.current.value;
                         const subThreeOfThirdYr = subThreeOfThirdYrInput.current.value;
+                        const fourthYr = fourthYrInput.current.value;
                         const subOneOfFourthYr = subOneOfFourthYrInput.current.value;
                         const subTwoOfFourthYr = subTwoOfFourthYrInput.current.value;
                         const subThreeOfFourthYr = subThreeOfFourthYrInput.current.value;
@@ -108,15 +117,19 @@ export default function NewStudent({ add }) {
                             hobby,
                             state,
                             township,
+                            firstYr,
                             subOneOfFirstYr,
                             subTwoOfFirstYr,
                             subThreeOfFirstYr,
+                            secondYr,
                             subOneOfSecondYr,
                             subTwoOfSecondYr,
                             subThreeOfSecondYr,
+                            thirdYr,
                             subOneOfThirdYr,
                             subTwoOfThirdYr,
                             subThreeOfThirdYr,
+                            fourthYr,
                             subOneOfFourthYr,
                             subTwoOfFourthYr,
                             subThreeOfFourthYr,
@@ -129,12 +142,15 @@ export default function NewStudent({ add }) {
                         const address = addressInput.current.value;
                         const hobby = hobbyInput.current.value;
                         const township = townshipInput.current.value;
+                        const firstYr = firstYrInput.current.value;
                         const subOneOfFirstYr = subOneOfFirstYrInput.current.value;
                         const subTwoOfFirstYr = subTwoOfFirstYrInput.current.value;
                         const subThreeOfFirstYr = subThreeOfFirstYrInput.current.value;
+                        const secondYr = secondYrInput.current.value;
                         const subOneOfSecondYr = subOneOfSecondYrInput.current.value;
                         const subTwoOfSecondYr = subTwoOfSecondYrInput.current.value;
                         const subThreeOfSecondYr = subThreeOfSecondYrInput.current.value;
+                        const thirdYr = thirdYrInput.current.value;
                         const subOneOfThirdYr = subOneOfThirdYrInput.current.value;
                         const subTwoOfThirdYr = subTwoOfThirdYrInput.current.value;
                         const subThreeOfThirdYr = subThreeOfThirdYrInput.current.value;
@@ -149,12 +165,15 @@ export default function NewStudent({ add }) {
                             hobby,
                             state,
                             township,
+                            firstYr,
                             subOneOfFirstYr,
                             subTwoOfFirstYr,
                             subThreeOfFirstYr,
+                            secondYr,
                             subOneOfSecondYr,
                             subTwoOfSecondYr,
                             subThreeOfSecondYr,
+                            thirdYr,
                             subOneOfThirdYr,
                             subTwoOfThirdYr,
                             subThreeOfThirdYr,
@@ -167,9 +186,11 @@ export default function NewStudent({ add }) {
                         const address = addressInput.current.value;
                         const hobby = hobbyInput.current.value;
                         const township = townshipInput.current.value;
+                        const firstYr = firstYrInput.current.value;
                         const subOneOfFirstYr = subOneOfFirstYrInput.current.value;
                         const subTwoOfFirstYr = subTwoOfFirstYrInput.current.value;
                         const subThreeOfFirstYr = subThreeOfFirstYrInput.current.value;
+                        const secondYr = secondYrInput.current.value;
                         const subOneOfSecondYr = subOneOfSecondYrInput.current.value;
                         const subTwoOfSecondYr = subTwoOfSecondYrInput.current.value;
                         const subThreeOfSecondYr = subThreeOfSecondYrInput.current.value;
@@ -184,9 +205,11 @@ export default function NewStudent({ add }) {
                             hobby,
                             state,
                             township,
+                            firstYr,
                             subOneOfFirstYr,
                             subTwoOfFirstYr,
                             subThreeOfFirstYr,
+                            secondYr,
                             subOneOfSecondYr,
                             subTwoOfSecondYr,
                             subThreeOfSecondYr,
@@ -199,6 +222,7 @@ export default function NewStudent({ add }) {
                         const address = addressInput.current.value;
                         const hobby = hobbyInput.current.value;
                         const township = townshipInput.current.value;
+                        const firstYr = firstYrInput.current.value;
                         const subOneOfFirstYr = subOneOfFirstYrInput.current.value;
                         const subTwoOfFirstYr = subTwoOfFirstYrInput.current.value;
                         const subThreeOfFirstYr = subThreeOfFirstYrInput.current.value;
@@ -213,6 +237,7 @@ export default function NewStudent({ add }) {
                             hobby,
                             state,
                             township,
+                            firstYr,
                             subOneOfFirstYr,
                             subTwoOfFirstYr,
                             subThreeOfFirstYr,
@@ -318,19 +343,19 @@ export default function NewStudent({ add }) {
                         }}>
                             <Add />
                         </IconButton>
-                        { firstYr && <Marks ref={subOneOfFirstYrInput} subOne={subOneOfFirstYrInput} subTwo={subTwoOfFirstYrInput} subThree={subThreeOfFirstYrInput} />}
+                        { firstYr && <Marks year={firstYrInput} subOne={subOneOfFirstYrInput} subTwo={subTwoOfFirstYrInput} subThree={subThreeOfFirstYrInput} />}
                     </Stack>
                     <Stack direction="row" spacing={3}>
                         { firstYr && <IconButton onClick={() => setSecondYr(true)}><Add /></IconButton>}
-                        { secondYr && <Marks ref={subOneOfSecondYrInput} subOne={subOneOfSecondYrInput} subTwo={subTwoOfSecondYrInput} subThree={subThreeOfSecondYrInput} />}
+                        { secondYr && <Marks year={secondYrInput} subOne={subOneOfSecondYrInput} subTwo={subTwoOfSecondYrInput} subThree={subThreeOfSecondYrInput} />}
                     </Stack>
                     <Stack direction="row" spacing={3}>
                         { secondYr && <IconButton onClick={() => setThirdYr(true)}><Add /></IconButton>}
-                        { thirdYr && <Marks ref={subOneOfThirdYrInput} subOne={subOneOfThirdYrInput} subTwo={subTwoOfThirdYrInput} subThree={subThreeOfThirdYrInput} />}
+                        { thirdYr && <Marks year={thirdYrInput} subOne={subOneOfThirdYrInput} subTwo={subTwoOfThirdYrInput} subThree={subThreeOfThirdYrInput} />}
                     </Stack>
                     <Stack direction="row" spacing={3}>
                         { thirdYr && <IconButton onClick={() => setFourthYr(true)}><Add /></IconButton>}
-                        { fourthYr && <Marks ref={subOneOfFourthYrInput} subOne={subOneOfFourthYrInput} subTwo={subTwoOfFourthYrInput} subThree={subThreeOfFourthYrInput} />}
+                        { fourthYr && <Marks year={fourthYrInput} subOne={subOneOfFourthYrInput} subTwo={subTwoOfFourthYrInput} subThree={subThreeOfFourthYrInput} />}
                     </Stack>
                     <Button
                         type="submit"
